@@ -1,0 +1,11 @@
+pyodbc
+pandas
+psycopg2-binary
+PyMySQL
+SQLAlchemy
+mysqlclient
+jupyterlab
+plotly
+streamlit
+streamlit-aggrid
+
