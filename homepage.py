@@ -17,7 +17,5 @@ st.markdown("""
 """,unsafe_allow_html=True
 )
 
-st.title("Test Streamlit with Sidebar")
-st.header("Please choose page at the left sidebar")
-
-st.sidebar.success("Select a page above.")
+st.title("Streamlit Title")
+st.header("Streamlit Header")
