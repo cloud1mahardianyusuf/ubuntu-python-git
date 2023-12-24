@@ -1,5 +1,2 @@
 [theme]
 base="light"
-
-#[server]
-#baseUrlPath = "/data/source_volume/streamlit_dba_v2"
