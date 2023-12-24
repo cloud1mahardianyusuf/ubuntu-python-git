@@ -3,10 +3,10 @@
 FROM ubuntu:22.04
 
 ### Create environment for Streamlit workdir
-WORKDIR /data/ubuntu-python-git
+WORKDIR /data/ubuntu-python-streamlit
 ADD config.toml .
 RUN mkdir ~/.streamlit
-RUN cp /data/ubuntu-python-git/config.toml ~/.streamlit
+RUN cp /data/ubuntu-python-streamlit/config.toml ~/.streamlit
 
 ### apt-get and system utilities
 RUN apt-get update && apt-get install -y \
@@ -77,4 +77,4 @@ ENTRYPOINT ["streamlit", "run", "homepage.py", "--server.port=8501", "--server.a
 # Run command on any directory : sudo docker run -d --privileged=true --name ubuntu_python_git -p 2222:22 -p 2888:8888 -p 2501:8501 -v /data:/data ubuntu_python_git
 
 ### run openssh service
-# Run command on directory /data/ubuntu-python-git : sudo nohup /usr/sbin/sshd -D
+# Run command on directory /data/ubuntu-python-streamlit : sudo nohup /usr/sbin/sshd -D
