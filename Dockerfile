@@ -67,19 +67,17 @@ RUN mkdir /var/run/sshd
 ### Start Command - Enable passwordless authentication with public key ###
 
 
-# Expose Port for SSH, JupyterLab, Streamlit (optional, change if needed)
+# Expose Port for SSH (22), JupyterLab (8888), Streamlit (8501) (optional, change if needed)
 EXPOSE 22
 EXPOSE 8888
 EXPOSE 8501
 
 ## For start the SSHD Service
-CMD ["nohup","/usr/sbin/sshd", "-D","&"]
-RUN sleep 5
+# CMD ["nohup","/usr/sbin/sshd", "-D","&"]
 ## For autto Start Jupyter Service
-CMD ["nohup","jupyter", "lab","--ip='0.0.0.0'","--port=8888","no-browser","--allow-root","--notebook-dir=/data","&"]
-RUN sleep 5
+# CMD ["nohup","jupyter", "lab","--ip='0.0.0.0'","--port=8888","no-browser","--allow-root","--notebook-dir=/data","&"]
 ## For autto Start Streamlit Service
-CMD ["nohup","streamlit", "run", "homepage.py", "--server.port=8501", "--server.address=0.0.0.0","&"]
+ENTRYPOINT ["streamlit", "run", "homepage.py", "--server.port=8501", "--server.address=0.0.0.0"]
 
 
 
