@@ -5,7 +5,7 @@
     -  Check docker image id
        ```docker images -a```
     -  Give tag name for docker image<br />
-       <img src="images/docker images.png" height="50" />      
+       <img src="images/docker images_.png" height="50" />      
     ```
     eg : docker tag <image id> <repository name>
     
