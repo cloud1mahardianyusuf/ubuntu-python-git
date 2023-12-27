@@ -2,11 +2,11 @@
 # Ubuntu 22.04 base with Python runtime and pyodbc to connect to SQL Server
 FROM ubuntu:22.04
 
-WORKDIR /data/python_with_git
+WORKDIR /data/ubuntu-python-streamlit
 # ADD requirements.txt .
 ADD config.toml .
 RUN mkdir ~/.streamlit
-RUN cp /data/python_with_git/config.toml ~/.streamlit
+RUN cp /data/ubuntu-python-streamlit/config.toml ~/.streamlit
 
 # apt-get and system utilities
 RUN apt-get update && apt-get install -y \
@@ -79,7 +79,9 @@ EXPOSE 8501
 ## For autto Start Streamlit Service
 ENTRYPOINT ["streamlit", "run", "homepage.py", "--server.port=8501", "--server.address=0.0.0.0"]
 
-
+## to run jupyter services
+# jupyter server --generate-config | jupyter server password
+# jupyter lab --ip='0.0.0.0' --port=8888 --no-browser --allow-root --notebook-dir=/data
 
 	
 ### Packages need to install for connect MS-SQL Server
